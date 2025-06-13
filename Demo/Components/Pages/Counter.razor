@@ -1,19 +1,29 @@
-﻿@page "/counter"
+﻿@page "/counter/{increment:int}"
 @rendermode InteractiveServer
 
 <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+<div class="alert alert-info">
+    <h1>Count by @increment</h1>
 
-<p role="status">Current count: @currentCount</p>
+    <p role="status">Current value: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+</div>
 
 @code {
+    [Parameter]
+    public int? Increment {get; set;}
+    private int increment = 1;
+
+    protected override void OnParametersSet()
+    {
+        if (Increment.HasValue) increment = Increment.Value;
+    }
     private int currentCount = 0;
 
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount +=  increment;
     }
 }
