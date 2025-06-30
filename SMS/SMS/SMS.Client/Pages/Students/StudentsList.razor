@@ -1,0 +1,76 @@
+@page "/students-list"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Students List</div>
+                <div class="card-body">
+                    @if (AllStudents.Count > 0)
+                    {
+                        <table class="table table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Country</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @foreach (var student in AllStudents)
+                            {
+                                <tr>
+                                    <td>@student.Id</td>
+                                    <td>@student.FirstName</td>
+                                    <td>@student.MiddleName</td>
+                                    <td>@student.LastName</td>
+                                    <td>@student.EmailAddress</td>
+                                    <td>@student.PhoneNumber</td>
+                                    <td>@student.Country</td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {   
+                        <div class="alert alert-info">There is no student list available</div>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private List<Student> AllStudents { get; set; } = new();
+
+    private async Task LoadAllStudents()
+    {
+        var students = await StudentService.GetAllStudentsAsync();
+        AllStudents.Clear();
+
+        if (students is null) return;
+
+        foreach (var student in students)
+        {
+            AllStudents.Add(student);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllStudents();
+    }
+
+}
