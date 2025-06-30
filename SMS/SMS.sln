@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS", "SMS\SMS\SMS.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Client", "SMS\SMS.Client\SMS.Client.csproj", "{03A79790-84BC-4927-AD33-96D50E0BF9BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Shared", "SMS.Shared\SMS.Shared.csproj", "{1369E60F-DB6F-4242-AC12-16D73F867AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{03A79790-84BC-4927-AD33-96D50E0BF9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03A79790-84BC-4927-AD33-96D50E0BF9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03A79790-84BC-4927-AD33-96D50E0BF9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1369E60F-DB6F-4242-AC12-16D73F867AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1369E60F-DB6F-4242-AC12-16D73F867AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1369E60F-DB6F-4242-AC12-16D73F867AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1369E60F-DB6F-4242-AC12-16D73F867AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
