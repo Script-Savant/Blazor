@@ -28,3 +28,11 @@
 /home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/obj/Debug/net8.0/IMS.WebApp.pdb
 /home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/obj/Debug/net8.0/IMS.WebApp.genruntimeconfig.cache
 /home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/obj/Debug/net8.0/ref/IMS.WebApp.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.CoreBusiness.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.Plugins.InMemory.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.UseCases.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.Plugins.InMemory.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.UseCases.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/bin/Debug/net8.0/IMS.CoreBusiness.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/obj/Debug/net8.0/IMS.WebApp.csproj.AssemblyReference.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.WebApp/obj/Debug/net8.0/IMS.WebApp.csproj.Up2Date

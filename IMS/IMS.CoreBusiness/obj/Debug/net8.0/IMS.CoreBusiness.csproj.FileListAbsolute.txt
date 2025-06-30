@@ -1,0 +1,12 @@
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/bin/Debug/net8.0/IMS.CoreBusiness.deps.json
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/bin/Debug/net8.0/IMS.CoreBusiness.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/bin/Debug/net8.0/IMS.CoreBusiness.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.GeneratedMSBuildEditorConfig.editorconfig
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.AssemblyInfoInputs.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.AssemblyInfo.cs
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.csproj.CoreCompileInputs.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.sourcelink.json
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/refint/IMS.CoreBusiness.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/IMS.CoreBusiness.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.CoreBusiness/obj/Debug/net8.0/ref/IMS.CoreBusiness.dll

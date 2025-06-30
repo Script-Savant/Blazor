@@ -1,0 +1,16 @@
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/bin/Debug/net8.0/IMS.UseCases.deps.json
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/bin/Debug/net8.0/IMS.UseCases.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/bin/Debug/net8.0/IMS.UseCases.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/bin/Debug/net8.0/IMS.CoreBusiness.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/bin/Debug/net8.0/IMS.CoreBusiness.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.csproj.AssemblyReference.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.GeneratedMSBuildEditorConfig.editorconfig
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.AssemblyInfoInputs.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.AssemblyInfo.cs
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.csproj.CoreCompileInputs.cache
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.sourcelink.json
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseC.984B1879.Up2Date
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/refint/IMS.UseCases.dll
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/IMS.UseCases.pdb
+/home/alex/Desktop/practise/Blazor/IMS/IMS.UseCases/obj/Debug/net8.0/ref/IMS.UseCases.dll

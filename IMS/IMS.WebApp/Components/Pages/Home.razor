@@ -1,7 +1,16 @@
 ﻿@page "/"
+@using IMS.CoreBusiness
+@using IMS.UseCases.Interfaces
+@inject IInventoryService _viewInventoryByName
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+@code {
+    private List<Inventory> _inventory = new();
 
-Welcome to your new app.
+    protected override async Task OnInitializedAsync()
+    {
+        _inventory = await _viewInventoryByName.GetInventoriesByNameAsync().ToList();
+    }
+
+}
