@@ -1,0 +1,12 @@
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/bin/Debug/net8.0/SMS.Shared.deps.json
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/bin/Debug/net8.0/SMS.Shared.dll
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/bin/Debug/net8.0/SMS.Shared.pdb
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.AssemblyInfoInputs.cache
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.AssemblyInfo.cs
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.csproj.CoreCompileInputs.cache
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.sourcelink.json
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.dll
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/refint/SMS.Shared.dll
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/SMS.Shared.pdb
+/home/alex/Desktop/practise/Blazor/SMS/SMS.Shared/obj/Debug/net8.0/ref/SMS.Shared.dll
