@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SMS.Client",
   "resources": {
-    "hash": "sha256-J/hqx2AlCLV+0f8+ew9O0wSv47nU55JXgwD58T+TP1Q=",
+    "hash": "sha256-8zBt/YbfTbDvjPyB85F/l7rXLXxYbiSIo9GAI2IIPmk=",
     "jsModuleNative": {
       "dotnet.native.8.0.17.alw4wxzybz.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -210,10 +210,12 @@
       "mscorlib.wasm": "sha256-flmBXVpp8uDpWBNEJuRkqo3Qnir1KADo5a1rCQISkPs=",
       "netstandard.wasm": "sha256-iuCVrIBmiGbXpNVvYkBmSt16BNEjbbD82vYrtHimftc=",
       "System.Private.CoreLib.wasm": "sha256-1Xa/xaUoA/iRxpDqZPUUzL8QaTawkoJLhGmxtRv9ZJI=",
-      "SMS.Client.wasm": "sha256-x/1ojnJCfqDgwmQVrlBCFu6mpuKsPDF1uSQU7oknCR0="
+      "SMS.Shared.wasm": "sha256-XmwOJsgwyldRp87RqeBL5LmB+9bh02M4Vsc4GBrKwEY=",
+      "SMS.Client.wasm": "sha256-js+eahQGURnkRIQoqkdlj/TJaH91BM0Gqb+WsOY3n0s="
     },
     "pdb": {
-      "SMS.Client.pdb": "sha256-lemsn6YZ+ZvvhfqhfUX9X1075Lh2aso7UCZyVyD8COE="
+      "SMS.Shared.pdb": "sha256-wtkF/mx/VOLsSRcdNqvnr1J7ucJyLqq9K/gY/Zkk7gc=",
+      "SMS.Client.pdb": "sha256-1UzMIozClc2MHPHZhdQ9Mdrot+4HE12/LddSHtbrbzY="
     }
   },
   "cacheBootResources": true,

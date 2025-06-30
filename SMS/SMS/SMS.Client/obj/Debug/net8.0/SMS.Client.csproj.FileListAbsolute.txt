@@ -1037,3 +1037,12 @@
 /home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/refint/SMS.Client.dll
 /home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/SMS.Client.pdb
 /home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/ref/SMS.Client.dll
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/wwwroot/_framework/SMS.Shared.pdb
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/wwwroot/_framework/SMS.Shared.wasm
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/wwwroot/_framework/SMS.Shared.wasm.gz
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/wwwroot/_framework/SMS.Shared.pdb.gz
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/SMS.Shared.dll
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/bin/Debug/net8.0/SMS.Shared.pdb
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/webcil/SMS.Shared.wasm
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/compressed/03wxlzuuzi.gz
+/home/alex/Desktop/practise/Blazor/SMS/SMS/SMS.Client/obj/Debug/net8.0/compressed/uu8r0inuqe.gz
