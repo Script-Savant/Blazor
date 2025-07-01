@@ -1,15 +1,15 @@
-@page "/add-student"
+@page "/student/edit/{id:int}"
 @using SMS.Shared.Models
 @rendermode InteractiveAuto
 @inject NavigationManager navigation;
 
-<h3>Add New Student</h3>
+<h3>Update Student Details</h3>
 
 <br/>
 
 <div class="row">
     <div class="col-md-12 form-control p-3">
-        <EditForm Model="StudentObj" OnValidSubmit="CreateStudent" FormName="addStudent">
+        <EditForm Model="StudentObj" OnValidSubmit="UpdateStudent" FormName="updateStudent">
             
             <DataAnnotationsValidator/>
             <ValidationSummary/>
@@ -44,7 +44,7 @@
                     <div class="col-md-6">
                         <div class="mb-2">
                             <label class="form-label">Email</label>
-                            <InputText for="EmailAddress" type="email" class="form-control" @bind-Value="@StudentObj.EmailAddress"/>
+                            <InputText for="EmailAddress" class="form-control" @bind-Value="@StudentObj.EmailAddress"/>
                             <ValidationMessage For="() => StudentObj.EmailAddress"/>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     </div>
                     
                     <div class="btn-group mt-4">
-                        <button type="submit" class="btn btn-primary mr-3">Save Student</button>
+                        <button type="submit" class="btn btn-primary mr-3">Update Student</button>
                         <button type="button" onclick="@(() => Cancel())" class="btn btn-secondary">Back to list</button>
                     </div>
                     
@@ -97,10 +97,24 @@
         PhoneNumber = "",
         Country = ""
     };
-
-    protected async Task CreateStudent()
+    
+    [Parameter]
+    public int id { get; set; }
+    
+    private async Task LoadStudent()
     {
-        var result = await StudentService.AddStudentAsync(StudentObj);
+        StudentObj = await StudentService.GetStudentByIdAsync(id);
+        
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadStudent();
+    }
+
+    protected async Task UpdateStudent()
+    {
+        var result = await StudentService.UpdateStudentAsync(StudentObj);
         navigation.NavigateTo("/students-list");
     }
 

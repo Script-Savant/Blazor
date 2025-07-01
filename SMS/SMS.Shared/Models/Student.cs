@@ -13,5 +13,7 @@ public class Student
     [EmailAddress]
     public required string EmailAddress { get; set; }
     public required string PhoneNumber { get; set; }
+    
+    public string? StudentAddress { get; set; }
     public required string Country { get; set; }
 }
