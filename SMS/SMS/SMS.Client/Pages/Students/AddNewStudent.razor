@@ -1,0 +1,103 @@
+@page "/add-student"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+@inject NavigationManager navigation;
+
+<h3>Add New Student</h3>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-12 form-control p-3">
+        <EditForm Model="StudentObj" OnValidSubmit="CreateStudent" FormName="addStudent">
+            
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            
+            <div class="col-md-12">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">First Name</label>
+                            <InputText for="FirstName" class="form-control" @bind-Value="@StudentObj.FirstName"/>
+                            <ValidationMessage For="() => StudentObj.FirstName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Middle Name</label>
+                            <InputText for="MiddleName" class="form-control" @bind-Value="@StudentObj.MiddleName"/>
+                            <ValidationMessage For="() => StudentObj.MiddleName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Last Name</label>
+                            <InputText for="LastName" class="form-control" @bind-Value="@StudentObj.LastName"/>
+                            <ValidationMessage For="() => StudentObj.LastName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <InputText for="EmailAddress" class="form-control" @bind-Value="@StudentObj.EmailAddress"/>
+                            <ValidationMessage For="() => StudentObj.EmailAddress"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Phone Number</label>
+                            <InputText for="PhoneNumber" class="form-control" @bind-Value="@StudentObj.PhoneNumber"/>
+                            <ValidationMessage For="() => StudentObj.PhoneNumber"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Country</label>
+                            <InputText for="FirstName" class="form-control" @bind-Value="@StudentObj.Country"/>
+                            <ValidationMessage For="() => StudentObj.Country"/>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group mt-4">
+                        <button type="submit" class="btn btn-primary mr-3">Save Student</button>
+                        <button type="button" onclick="@(() => Cancel())" class="btn btn-secondary">Back to list</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public Student StudentObj { get; set; } = new Student
+    {
+        FirstName = "",
+        MiddleName = "",
+        LastName = "",
+        EmailAddress = "",
+        PhoneNumber = "",
+        Country = ""
+    };
+
+    protected async Task CreateStudent()
+    {
+        var result = await StudentService.AddStudentAsync(StudentObj);
+        navigation.NavigateTo("/students-list");
+    }
+
+    public void Cancel()
+    {
+        navigation.NavigateTo("/students-list");
+    }
+
+}
