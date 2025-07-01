@@ -1,0 +1,105 @@
+@page "/student/delete/{id:int}"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+@inject NavigationManager navigation;
+
+<h3>Delete Student Details</h3>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-12 form-control p-3">
+        <table class="table">
+            <tr>
+                <th>First Name</th>
+                <td>@StudentObj.FirstName</td>
+            </tr>
+            <tr>
+                <th>Middle Name</th>
+                <td>@StudentObj.MiddleName</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>@StudentObj.LastName</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@StudentObj.EmailAddress</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>@StudentObj.PhoneNumber</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>@StudentObj.StudentAddress</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>@StudentObj.Country</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-group mt-3">
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete</button>
+        <button @onclick="Cancel" type="button" class="btn btn-secondary">Cancel</button>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete <strong>@StudentObj.FirstName @StudentObj.LastName</strong>?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button @onclick="StudentDelete" class="btn btn-danger">Yes, Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private Student StudentObj { get; set; } = new Student
+    {
+        FirstName = "",
+        MiddleName = "",
+        LastName = "",
+        EmailAddress = "",
+        StudentAddress = "",
+        PhoneNumber = "",
+        Country = ""
+    };
+
+    [Parameter]
+    public int id { get; set; }
+
+    private async Task LoadStudent()
+    {
+        StudentObj = await StudentService.GetStudentByIdAsync(id);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadStudent();
+    }
+
+    protected async Task StudentDelete()
+    {
+        await StudentService.DeleteStudentAsync(id);
+        navigation.NavigateTo("/students-list");
+    }
+
+    public void Cancel()
+    {
+        navigation.NavigateTo("/students-list");
+    }
+}
