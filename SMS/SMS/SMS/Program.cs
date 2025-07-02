@@ -6,6 +6,7 @@ using SMS.Components;
 using SMS.Components.Account;
 using SMS.Data;
 using SMS.Services;
+using SMS.Shared.CountryRepository;
 using SMS.Shared.StudentRepository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,6 +43,7 @@ builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSe
 
 // custom services
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 
 
 // register address
