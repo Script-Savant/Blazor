@@ -55,7 +55,10 @@ public class StudentRepository : IStudentRepository
 
     public async Task<List<Student>> GetAllStudentsAsync()
     {
-        var students = await _db.Students.ToListAsync();
+        var students = await _db.Students
+            .OrderBy(s => s.Id)
+            .ToListAsync();
+        
         return students;
     }
 }

@@ -14,7 +14,7 @@
             <em>Loading students...</em>
         </div>
     }
-    else if (AllStudents.Count > 0)
+    @if (AllStudents.Count > 0)
     {
         <div class="table-responsive shadow-sm rounded border">
             <table class="table table-striped table-hover mb-0">
@@ -99,11 +99,9 @@
     {
         var students = await StudentService.GetAllStudentsAsync();
         AllStudents.Clear();
-
-        if (students is not null)
-        {
-            AllStudents.AddRange(students);
-        }
+        
+        AllStudents.AddRange(students);
+        
     }
 
     protected override async Task OnInitializedAsync()
