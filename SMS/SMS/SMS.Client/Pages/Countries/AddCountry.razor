@@ -1,0 +1,62 @@
+@page "/add-country"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+@inject NavigationManager Navigation;
+
+<h3>AddCountry</h3>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-12 form-control p-3">
+        <EditForm Model="CountryObj" OnValidSubmit="CreateCountry" FormName="addCountry">
+            
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            
+            <div class="col-md-12">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Country Code</label>
+                            <InputText for="Code" class="form-control" @bind-Value="@CountryObj.Code"/>
+                            <ValidationMessage For="() => CountryObj.Code"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Country Name</label>
+                            <InputText for="Name" class="form-control" @bind-Value="@CountryObj.Name"/>
+                            <ValidationMessage For="() => CountryObj.Name"/>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="btn-group mt-4">
+                        <button type="submit" class="btn btn-primary mr-3">Save Country</button>
+                        <button type="button" @onclick="Cancel" class="btn btn-secondary">Back to list</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private Country CountryObj { get; set; } = new();
+
+    protected async Task CreateCountry()
+    {
+        await CountryService.AddCountryAsync(CountryObj);
+        Navigation.NavigateTo("/countries-list");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/countries-list");
+    }
+}
