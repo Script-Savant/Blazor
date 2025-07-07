@@ -19,6 +19,14 @@
                     
                     <div class="col-md-6">
                         <div class="mb-2">
+                            <label class="form-label">Registration No</label>
+                            <InputText for="RegNo" class="form-control" @bind-Value="@StudentObj.RegNo"/>
+                            <ValidationMessage For="() => StudentObj.RegNo"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
                             <label class="form-label">First Name</label>
                             <InputText for="FirstName" class="form-control" @bind-Value="@StudentObj.FirstName"/>
                             <ValidationMessage For="() => StudentObj.FirstName"/>
@@ -80,6 +88,14 @@
                         </div>
                     </div>
                     
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">DOB</label>
+                            <InputDate for="BirthDate" class="form-control" @bind-Value="@StudentObj.BirthDate"/>
+                            <ValidationMessage For="() => StudentObj.BirthDate"/>
+                        </div>
+                    </div>
+                    
                     <div class="btn-group mt-4">
                         <button type="submit" class="btn btn-primary mr-3">Save Student</button>
                         <button type="button" @onclick="Cancel" class="btn btn-secondary">Back to list</button>
@@ -96,6 +112,7 @@
     [SupplyParameterFromForm]
     public Student StudentObj { get; set; } = new Student
     {
+        RegNo = "",
         FirstName = "",
         MiddleName = "",
         LastName = "",

@@ -11,4 +11,13 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Country> Countries { get; set; }
     public DbSet<SystemCode> SystemCodes { get; set; }
     public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<Student>()
+            .HasIndex(s => s.RegNo)
+            .IsUnique();
+        
+        base.OnModelCreating(builder);
+    }
 }

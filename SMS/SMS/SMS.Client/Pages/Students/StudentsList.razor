@@ -20,7 +20,7 @@
             <table class="table table-striped table-hover mb-0">
                 <thead class="table-info">
                 <tr>
-                    <th class="fw-normal">ID</th>
+                    <th class="fw-normal">RegNo</th>
                     <th class="fw-normal">First Name</th>
                     <th class="fw-normal">Middle Name</th>
                     <th class="fw-normal">Last Name</th>
@@ -35,7 +35,7 @@
                 @foreach (var student in PagedStudents)
                 {
                     <tr>
-                        <td>@student.Id</td>
+                        <td>@student.RegNo</td>
                         <td class="text-capitalize">@student.FirstName</td>
                         <td class="text-capitalize">@student.MiddleName</td>
                         <td class="text-capitalize">@student.LastName</td>
