@@ -68,14 +68,21 @@
                     <div class="col-md-6">
                         <div class="mb-2">
                             <label class="form-label">Country</label>
-                            <InputText for="FirstName" class="form-control" @bind-Value="@StudentObj.Country"/>
+                            <InputSelect for="FirstName" class="form-control" @bind-Value="@StudentObj.Country">
+                                <option value="">Select Country</option>
+                                @foreach (var country in _countries)
+                                {
+                                    <option value="@country.Name">@country.Name</option>
+                                }
+                                
+                            </InputSelect>
                             <ValidationMessage For="() => StudentObj.Country"/>
                         </div>
                     </div>
                     
                     <div class="btn-group mt-4">
                         <button type="submit" class="btn btn-primary mr-3">Save Student</button>
-                        <button type="button" onclick="@(() => Cancel())" class="btn btn-secondary">Back to list</button>
+                        <button type="button" @onclick="Cancel" class="btn btn-secondary">Back to list</button>
                     </div>
                     
                 </div>
@@ -98,9 +105,18 @@
         Country = ""
     };
 
+    private readonly List<Country> _countries = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var countries = await CountryService.GetAllCountriesAsync();
+        _countries.AddRange(countries);
+    }
+
     protected async Task CreateStudent()
     {
         await StudentService.AddStudentAsync(StudentObj);
+            
         Navigation.NavigateTo("/students-list");
     }
 
