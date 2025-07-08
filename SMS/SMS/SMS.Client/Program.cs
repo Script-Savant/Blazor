@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using SMS.Client.Services;
 using SMS.Shared.CountryRepository;
+using SMS.Shared.ParentRepository;
 using SMS.Shared.StudentRepository;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -14,6 +15,7 @@ builder.Services.AddSingleton<AuthenticationStateProvider, PersistentAuthenticat
 // custom services
 builder.Services.AddScoped<IStudentRepository, StudentService>();
 builder.Services.AddScoped<ICountryRepository, CountryService>();
+builder.Services.AddScoped<IParentRepository, ParentService>();
 
 
 // base address
