@@ -17,8 +17,7 @@ public class StudentRepository : IStudentRepository
     public async Task<Student> AddStudentAsync(Student student)
     {
         if (student == null) throw new ArgumentNullException();
-
-        student.BirthDate = student.BirthDate!.Value.ToUniversalTime();
+        
         var newStudent = _db.Students.Add(student).Entity;
         await _db.SaveChangesAsync();
 
@@ -29,7 +28,6 @@ public class StudentRepository : IStudentRepository
     {
         if (student == null) throw new ArgumentNullException(nameof(student));
         
-        if (student.BirthDate.HasValue) student.BirthDate.Value.ToUniversalTime();
         _db.Students.Update(student);
         await _db.SaveChangesAsync();
 

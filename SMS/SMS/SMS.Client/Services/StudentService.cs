@@ -15,7 +15,6 @@ public class StudentService : IStudentRepository
 
     public async Task<Student> AddStudentAsync(Student student)
     {
-        if (student.BirthDate.HasValue) student.BirthDate.Value.ToUniversalTime();
         var result = await _httpClient.PostAsJsonAsync("api/student/add-student", student);
         if (!result.IsSuccessStatusCode)
             throw new Exception($"AddStudent failed: {result.StatusCode}");
