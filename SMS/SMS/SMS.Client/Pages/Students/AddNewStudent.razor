@@ -51,6 +51,19 @@
                     
                     <div class="col-md-6">
                         <div class="mb-2">
+                            <label class="form-label">Gender</label>
+                            <InputSelect for="FirstName" class="form-control" @bind-Value="@StudentObj.Gender">
+                                <option value="">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </InputSelect>
+                            <ValidationMessage For="() => StudentObj.Gender"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
                             <label class="form-label">Email</label>
                             <InputText for="EmailAddress" type="email" class="form-control" @bind-Value="@StudentObj.EmailAddress"/>
                             <ValidationMessage For="() => StudentObj.EmailAddress"/>
