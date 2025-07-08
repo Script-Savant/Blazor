@@ -3,6 +3,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SMS.Shared.Models;
 
+public enum GenderType
+{
+    Male,
+    Female,
+    Other
+}
+
 public class Student
 {
     [Key]
@@ -21,5 +28,6 @@ public class Student
     public required string PhoneNumber { get; set; }
     public string? StudentAddress { get; set; }
     public required string Country { get; set; }
-    public DateTime? BirthDate { get; set; }
+    public DateOnly? BirthDate { get; set; }
+    public GenderType? Gender { get; set; }
 }
