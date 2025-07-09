@@ -113,7 +113,7 @@
                                 <option>Select Student</option>
                                 @foreach (var student in _students)
                                 {
-                                    <option value="@student.Id">@student.FirstName @student.MiddleName @student.LastName</option>
+                                    <option value="@student.Id">@student.FullName</option>
                                 }
                             </InputSelect>
                             <ValidationMessage For="() => ParentObj.StudentId"/>

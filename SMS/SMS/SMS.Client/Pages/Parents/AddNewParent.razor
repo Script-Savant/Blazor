@@ -100,8 +100,7 @@
                             <InputSelect for="FirstName" class="form-control" @bind-Value="@ParentObj.DadOrMum">
                                 <option value="Dad">Select Relation</option>
                                 <option value="Dad">Dad</option>
-                                <option value="Mum">Mum</option>
-                                <option value="Guardian">Guardian</option>
+                                <option value="Mum">Mum</option><option value="Guardian">Guardian</option>
                             </InputSelect>
                             <ValidationMessage For="() => ParentObj.DadOrMum"/>
                         </div>
@@ -114,7 +113,7 @@
                                 <option>Select Student</option>
                                 @foreach (var student in _students)
                                 {
-                                    <option value="@student.Id">@student.FirstName @student.MiddleName @student.LastName</option>
+                                    <option value="@student.Id">@student.FullName</option>
                                 }
                             </InputSelect>
                             <ValidationMessage For="() => ParentObj.StudentId"/>
