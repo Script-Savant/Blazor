@@ -1,6 +1,6 @@
 using System.Net.Http.Json;
 using SMS.Shared.Models;
-using SMS.Shared.StudentRepository;
+using SMS.Shared.Interfaces;
 
 namespace SMS.Client.Services;
 

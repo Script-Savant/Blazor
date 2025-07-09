@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SMS.Data;
 using SMS.Shared.Models;
-using SMS.Shared.ParentRepository;
+using SMS.Shared.Interfaces;
 
 namespace SMS.Services;
 

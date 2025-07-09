@@ -7,8 +7,7 @@ using SMS.Components.Account;
 using SMS.Data;
 using SMS.Services;
 using SMS.Shared.CountryRepository;
-using SMS.Shared.ParentRepository;
-using SMS.Shared.StudentRepository;
+using SMS.Shared.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

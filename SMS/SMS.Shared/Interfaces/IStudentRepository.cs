@@ -1,6 +1,6 @@
 using SMS.Shared.Models;
 
-namespace SMS.Shared.StudentRepository;
+namespace SMS.Shared.Interfaces;
 
 public interface IStudentRepository
 {

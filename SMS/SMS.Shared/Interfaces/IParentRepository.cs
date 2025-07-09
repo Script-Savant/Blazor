@@ -1,6 +1,6 @@
 using SMS.Shared.Models;
 
-namespace SMS.Shared.ParentRepository;
+namespace SMS.Shared.Interfaces;
 
 public interface IParentRepository
 {

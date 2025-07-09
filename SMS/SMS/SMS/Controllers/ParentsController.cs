@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SMS.Shared.Models;
-using SMS.Shared.ParentRepository;
+using SMS.Shared.Interfaces;
 
 namespace SMS.Controllers
 {

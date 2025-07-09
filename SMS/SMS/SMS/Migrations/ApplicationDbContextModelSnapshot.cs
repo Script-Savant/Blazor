@@ -250,10 +250,14 @@ namespace SMS.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("longtext");
 
+                    b.Property<DateOnly?>("BirthDate")
+                        .HasColumnType("date");
+
                     b.Property<int?>("DadOrMum")
                         .HasColumnType("int");
 
                     b.Property<string>("EmailAddress")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("EmploymentStatus")
@@ -298,6 +302,9 @@ namespace SMS.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .HasColumnType("longtext");
+
                     b.Property<DateOnly?>("BirthDate")
                         .HasColumnType("date");
 
@@ -321,7 +328,6 @@ namespace SMS.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("MiddleName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("PhoneNumber")
@@ -331,9 +337,6 @@ namespace SMS.Migrations
                     b.Property<string>("RegNo")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
-
-                    b.Property<string>("StudentAddress")
-                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -388,6 +391,62 @@ namespace SMS.Migrations
                     b.HasIndex("SystemCodeId");
 
                     b.ToTable("SystemCodeDetails");
+                });
+
+            modelBuilder.Entity("SMS.Shared.Models.Teacher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateOnly?>("BirthDate")
+                        .HasColumnType("date");
+
+                    b.Property<int?>("Designation")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FacebookLink")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("LinkedInLink")
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("MaritalStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MiddleName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TwitterLink")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

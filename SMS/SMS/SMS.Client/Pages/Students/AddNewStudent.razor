@@ -81,8 +81,8 @@
                     <div class="col-md-6">
                         <div class="mb-2">
                             <label class="form-label">Student Address</label>
-                            <InputText for="StudentAddress" class="form-control" @bind-Value="@StudentObj.StudentAddress"/>
-                            <ValidationMessage For="() => StudentObj.StudentAddress"/>
+                            <InputText for="StudentAddress" class="form-control" @bind-Value="@StudentObj.Address"/>
+                            <ValidationMessage For="() => StudentObj.Address"/>
                         </div>
                     </div>
                     
@@ -122,18 +122,7 @@
 
 @code {
 
-    [SupplyParameterFromForm]
-    public Student StudentObj { get; set; } = new Student
-    {
-        RegNo = "",
-        FirstName = "",
-        MiddleName = "",
-        LastName = "",
-        EmailAddress = "",
-        StudentAddress = "",
-        PhoneNumber = "",
-        Country = ""
-    };
+    [SupplyParameterFromForm] public Student StudentObj { get; set; } = new();
 
     private readonly List<Country> _countries = new();
 
