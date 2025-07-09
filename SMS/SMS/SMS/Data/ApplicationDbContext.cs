@@ -12,6 +12,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<SystemCode> SystemCodes { get; set; }
     public DbSet<SystemCodeDetail> SystemCodeDetails { get; set; }
     public DbSet<Parent> Parents { get; set; }
+    public DbSet<Teacher> Teachers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
