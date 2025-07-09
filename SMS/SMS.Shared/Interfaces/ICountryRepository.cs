@@ -1,6 +1,6 @@
 using SMS.Shared.Models;
 
-namespace SMS.Shared.CountryRepository;
+namespace SMS.Shared.Interfaces;
 
 public interface ICountryRepository
 {

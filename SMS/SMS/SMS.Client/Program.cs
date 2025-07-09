@@ -2,7 +2,6 @@ using SMS.Client;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using SMS.Client.Services;
-using SMS.Shared.CountryRepository;
 using SMS.Shared.Interfaces;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

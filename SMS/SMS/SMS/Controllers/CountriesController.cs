@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using SMS.Shared.CountryRepository;
+using SMS.Shared.Interfaces;
 using SMS.Shared.Models;
 
 namespace SMS.Controllers

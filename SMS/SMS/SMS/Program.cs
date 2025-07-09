@@ -6,7 +6,6 @@ using SMS.Components;
 using SMS.Components.Account;
 using SMS.Data;
 using SMS.Services;
-using SMS.Shared.CountryRepository;
 using SMS.Shared.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);

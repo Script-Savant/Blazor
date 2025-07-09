@@ -1,5 +1,5 @@
 using System.Net.Http.Json;
-using SMS.Shared.CountryRepository;
+using SMS.Shared.Interfaces;
 using SMS.Shared.Models;
 
 namespace SMS.Client.Services;
