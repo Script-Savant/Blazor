@@ -1,0 +1,179 @@
+@page "/add-teacher"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+@inject NavigationManager Navigation;
+
+<h3>Add New Teacher</h3>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-12 form-control p-3">
+        <EditForm Model="TeacherObj" OnValidSubmit="CreateTeacher" FormName="addTeacher">
+            
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            
+            <div class="col-md-12">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Passport/ID No</label>
+                            <InputText for="GovtNumber" class="form-control" @bind-Value="@TeacherObj.GovtNumber"/>
+                            <ValidationMessage For="() => TeacherObj.GovtNumber"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">First Name</label>
+                            <InputText for="FirstName" class="form-control" @bind-Value="@TeacherObj.FirstName"/>
+                            <ValidationMessage For="() => TeacherObj.FirstName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Middle Name</label>
+                            <InputText for="MiddleName" class="form-control" @bind-Value="@TeacherObj.MiddleName"/>
+                            <ValidationMessage For="() => TeacherObj.MiddleName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Last Name</label>
+                            <InputText for="LastName" class="form-control" @bind-Value="@TeacherObj.LastName"/>
+                            <ValidationMessage For="() => TeacherObj.LastName"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Gender</label>
+                            <InputSelect for="FirstName" class="form-control" @bind-Value="@TeacherObj.Gender">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </InputSelect>
+                            <ValidationMessage For="() => TeacherObj.Gender"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <InputText for="EmailAddress" type="email" class="form-control" @bind-Value="@TeacherObj.EmailAddress"/>
+                            <ValidationMessage For="() => TeacherObj.EmailAddress"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Phone Number</label>
+                            <InputText for="PhoneNumber" class="form-control" @bind-Value="@TeacherObj.PhoneNumber"/>
+                            <ValidationMessage For="() => TeacherObj.PhoneNumber"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Address</label>
+                            <InputText for="StudentAddress" class="form-control" @bind-Value="@TeacherObj.Address"/>
+                            <ValidationMessage For="() => TeacherObj.Address"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Facebook Link</label>
+                            <InputText for="FacebookLink" type="url" class="form-control" @bind-Value="@TeacherObj.FacebookLink"/>
+                            <ValidationMessage For="() => TeacherObj.FacebookLink"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Twitter Link</label>
+                            <InputText for="TwitterLink" type="url" class="form-control" @bind-Value="@TeacherObj.TwitterLink"/>
+                            <ValidationMessage For="() => TeacherObj.TwitterLink"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Linkedin Link</label>
+                            <InputText for="LinkedInLink" type="url" class="form-control" @bind-Value="@TeacherObj.LinkedInLink"/>
+                            <ValidationMessage For="() => TeacherObj.LinkedInLink"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Designation</label>
+                            <InputSelect for="FirstName" class="form-control" @bind-Value="@TeacherObj.Designation">
+                                <option value="">Select Designation</option>
+                                <option value="JuniorTeacher">Junior Teacher</option>
+                                <option value="SeniorTeacher">Senior Teacher</option>
+                                <option value="ClassTeacher">Class Teacher</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Lecturer">Lecturer</option>
+                                <option value="SeniorLecture">Senior Lecturer</option>
+                                <option value="AssistantProfessor">Assistant Professor</option>
+                                <option value="AssociateProfessor">Associate Professor</option>
+                                <option value="Professor">Professor</option>
+                                <option value="HeadOfDepartment">Head of Department</option>
+                                <option value="DeanOfFaculty">Dean Of Faculty</option>
+                                <option value="Principal">Principal</option>
+                                <option value="ViceChancellor">Vice Chancellor</option>
+                            </InputSelect>
+                            <ValidationMessage For="() => TeacherObj.Designation"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">DOB</label>
+                            <InputDate for="BirthDate" class="form-control" @bind-Value="@TeacherObj.BirthDate"/>
+                            <ValidationMessage For="() => TeacherObj.BirthDate"/>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="btn-group mt-4">
+                        <button type="submit" class="btn btn-primary mr-3">Save Teacher</button>
+                        <button type="button" @onclick="Cancel" class="btn btn-secondary">Back to list</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm] public Teacher TeacherObj { get; set; } = new();
+    
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     var students = await StudentService.GetAllStudentsAsync();
+    //     _students.AddRange(students);
+    // }
+
+    protected async Task CreateTeacher()
+    {
+        await TeacherService.AddTeacher(TeacherObj);
+            
+        Navigation.NavigateTo("/teachers-list");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/teachers-list");
+    }
+
+}
