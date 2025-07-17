@@ -1,0 +1,159 @@
+@page "/teachers-list"
+@using SMS.Shared.Models
+@inject IJSRuntime Js
+@rendermode InteractiveAuto
+@using Humanizer
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Teachers List</h2>
+        <a href="/add-teacher" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Add New Teacher
+        </a>
+    </div>
+
+    @if (!AllTeachers.Any())
+    {
+        <div class="alert alert-info text-center">
+            <em>Loading teachers...</em>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive shadow-sm rounded border">
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-info">
+                    <tr>
+                        <th class="fw-normal">ID</th>
+                        <th class="fw-normal">FirstName</th>
+                        <th class="fw-normal">MiddleName</th>
+                        <th class="fw-normal">LastName</th>
+                        <th class="fw-normal">Gender</th>
+                        <th class="fw-normal">Phone</th>
+                        <th class="fw-normal">Designation</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @foreach (var teacher in PagedTeachers)
+                    {
+                        <tr>
+                            <td>@teacher.Id</td>
+                            <td class="text-capitalize">@teacher.FirstName</td>
+                            <td class="text-capitalize">@teacher.MiddleName</td>
+                            <td class="text-capitalize">@teacher.LastName</td>
+                            <td class="text-capitalize">@teacher.Gender</td>
+                            <td class="text-capitalize">@teacher.PhoneNumber</td>
+                            <td class="text-capitalize">@teacher.Designation.Humanize()</td>
+                            <td>
+                                <a href="/teacher/edit/@teacher.Id" class="btn btn-sm btn-outline-success">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-danger" @onclick="() => ShowDeleteModal(teacher)">
+                                    <i class="bi bi-archive"></i> Del
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        @if (TotalPages > 1)
+        {
+            <nav class="mt-3">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item @(CurrentPage == 1 ? "disabled" : "")">
+                        <button class="page-link" @onclick="PrevPage">Prev</button>
+                    </li>
+
+                    @for (int i = 1; i <= TotalPages; i++)
+                    {
+                        <li class="page-item @(CurrentPage == i ? "active" : "")">
+                            <button class="page-link" @onclick="() => GoToPage(i)">@i</button>
+                        </li>
+                    }
+
+                    <li class="page-item @(CurrentPage == TotalPages ? "disabled" : "")">
+                        <button class="page-link" @onclick="NextPage">Next</button>
+                    </li>
+                </ul>
+            </nav>
+        }
+    }
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteTeacherModal" tabindex="-1" aria-labelledby="deleteTeacherModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-danger">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteTeacherModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete the teacher <strong>@_selectedTeacher?.FirstName @_selectedTeacher?.LastName</strong>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-danger" @onclick="ConfirmDeleteParent">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Teacher> AllTeachers { get; set; } = new();
+    private int CurrentPage { get; set; } = 1;
+    private int PageSize { get; set; } = 30;
+    private int TotalPages => (int)Math.Ceiling(AllTeachers.Count / (double)PageSize);
+    private IEnumerable<Teacher> PagedTeachers => AllTeachers.Skip((CurrentPage - 1) * PageSize).Take(PageSize);
+
+    private Teacher? _selectedTeacher;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllTeachers();
+    }
+
+    private async Task LoadAllTeachers()
+    {
+        var teachers = await TeacherService.GetAllTeachers();
+        AllTeachers.Clear();
+        AllTeachers.AddRange(teachers);
+    }
+
+    private void GoToPage(int page)
+    {
+        if (page < 1) page = 1;
+        if (page > TotalPages) page = TotalPages;
+        CurrentPage = page;
+    }
+
+    private void NextPage() => GoToPage(CurrentPage + 1);
+    private void PrevPage() => GoToPage(CurrentPage - 1);
+
+    private void ShowDeleteModal(Teacher teacher)
+    {
+        _selectedTeacher = teacher;
+        Js.InvokeVoidAsync("bootstrapInterop.showModal", "#deleteTeacherModal");
+    }
+
+    private async Task ConfirmDeleteParent()
+    {
+        if (_selectedTeacher is not null)
+        {
+            try
+            {
+                await TeacherService.DeleteTeacher(_selectedTeacher.Id);
+                await LoadAllTeachers();
+                await Js.InvokeVoidAsync("bootstrapInterop.hideModal", "#deleteTeacherModal");
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine($"Error deleting country: {ex.Message}");
+            }
+        }
+    }
+}
