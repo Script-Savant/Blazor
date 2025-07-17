@@ -14,6 +14,7 @@ builder.Services.AddSingleton<AuthenticationStateProvider, PersistentAuthenticat
 builder.Services.AddScoped<IStudentRepository, StudentService>();
 builder.Services.AddScoped<ICountryRepository, CountryService>();
 builder.Services.AddScoped<IParentRepository, ParentService>();
+builder.Services.AddScoped<ITeacherRepository, TeacherService>();
 
 
 // base address
