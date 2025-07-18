@@ -6,8 +6,9 @@ public enum MaritalStatus
 {
     Single,
     Married,
-    Divorced,
-    Widowed
+    Divorcee,
+    Widow,
+    Widower
 }
 
 public enum GenderType
