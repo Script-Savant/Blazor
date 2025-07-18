@@ -88,6 +88,21 @@
                     
                     <div class="col-md-6">
                         <div class="mb-2">
+                            <label class="form-label">Marital Status</label>
+                            <InputSelect for="FirstName" class="form-control" @bind-Value="@TeacherObj.MaritalStatus">
+                                <option value="">Select Marital Status</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Divorcee">Divorcee</option>
+                                <option value="Widow">Widow</option>
+                                <option value="Widower">Widower</option>
+                            </InputSelect>
+                            <ValidationMessage For="() => TeacherObj.MaritalStatus"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
                             <label class="form-label">Facebook Link</label>
                             <InputText for="FacebookLink" type="url" class="form-control" @bind-Value="@TeacherObj.FacebookLink"/>
                             <ValidationMessage For="() => TeacherObj.FacebookLink"/>
