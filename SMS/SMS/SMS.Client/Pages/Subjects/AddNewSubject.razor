@@ -1,0 +1,64 @@
+@page "/add-subject"
+@using SMS.Shared.Models
+@rendermode InteractiveAuto
+@inject NavigationManager Navigation;
+
+<h3>Add New Subject</h3>
+
+<br/>
+
+<div class="row">
+    <div class="col-md-12 form-control p-3">
+        <EditForm Model="SubjectObj" OnValidSubmit="CreateSubject" FormName="addSubject">
+            
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            
+            <div class="col-md-12">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Subject Name</label>
+                            <InputText for="Name" class="form-control" @bind-Value="@SubjectObj.Name"/>
+                            <ValidationMessage For="() => SubjectObj.Name"/>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <label class="form-label">Description</label>
+                            <InputText for="Description" class="form-control" @bind-Value="@SubjectObj.Description"/>
+                            <ValidationMessage For="() => SubjectObj.Description"/>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group mt-4">
+                        <button type="submit" class="btn btn-primary mr-3">Save Subject</button>
+                        <button type="button" @onclick="Cancel" class="btn btn-secondary">Back to list</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm] public Subject SubjectObj { get; set; } = new();
+    
+
+    protected async Task CreateSubject()
+    {
+        await SubjectService.AddSubject(SubjectObj);
+            
+        Navigation.NavigateTo("/subjects-list");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/subjects-list");
+    }
+
+}
