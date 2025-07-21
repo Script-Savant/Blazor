@@ -16,6 +16,8 @@ builder.Services.AddScoped<ICountryRepository, CountryService>();
 builder.Services.AddScoped<IParentRepository, ParentService>();
 builder.Services.AddScoped<ITeacherRepository, TeacherService>();
 builder.Services.AddScoped<ISubjectRepository, SubjectService>();
+builder.Services.AddScoped<IBookCategoryRepository, BookCategoryService>();
+builder.Services.AddScoped<IBookRepository, BookService>();
 
 
 // base address
